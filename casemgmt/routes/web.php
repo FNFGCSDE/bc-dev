@@ -26,10 +26,13 @@ require __DIR__.'/auth.php';
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 
+Route::get('/migration', function () {
+  return view('migrations', ['message' => 'Database migrations are being simulated here.']);
+});
+
 Route::middleware('auth')->group( function () {
 
 /*
-
     WORK ITEMS
 
 */
